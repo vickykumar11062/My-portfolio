@@ -1,0 +1,2464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicky Kumar | Full Stack Developer & AI Enthusiast</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --light-color: #ecf0f1;
+      --dark-color: #2c3e50;
+      --gradient-primary: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      --gradient-secondary: linear-gradient(to right, #3498db, #e74c3c);
+      --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f8f9fa;
+      color: #555;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: rgba(44, 62, 80, 0.95);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      padding: 15px 0;
+    }
+
+    .navbar.scrolled {
+      padding: 10px 0;
+      backdrop-filter: blur(10px);
+      background-color: rgba(44, 62, 80, 0.98);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--light-color) !important;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-link {
+      color: var(--light-color) !important;
+      margin: 0 12px;
+      font-weight: 500;
+      position: relative;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--accent-color) !important;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: var(--accent-color);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.4s ease;
+      border-radius: 3px;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Hero Section */
+    #hero {
+      background: var(--gradient-primary);
+      color: white;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      filter: blur(60px);
+      z-index: 1;
+    }
+
+    .hero-shape-1 {
+      width: 700px;
+      height: 700px;
+      top: -300px;
+      right: -300px;
+    }
+
+    .hero-shape-2 {
+      width: 400px;
+      height: 400px;
+      bottom: -150px;
+      left: -150px;
+      background: rgba(231, 76, 60, 0.05);
+    }
+
+    .hero-content {
+      z-index: 2;
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-title span {
+      color: var(--accent-color);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title span::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: var(--accent-color);
+      bottom: 5px;
+      left: 0;
+      z-index: -1;
+      opacity: 0.3;
+      border-radius: 2px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 25px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-text {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 30px;
+      max-width: 90%;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent-color);
+      border: none;
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(231, 76, 60, 0.5);
+      background: var(--accent-color);
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-outline-light {
+      border: 2px solid white;
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: var(--transition);
+    }
+
+    .btn-outline-light:hover {
+      background: white;
+      color: var(--secondary-color) !important;
+      transform: translateY(-3px);
+    }
+
+    .social-icons {
+      margin-top: 40px;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      margin-right: 15px;
+      color: white;
+      font-size: 1.3rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-icon::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-secondary);
+      top: 0;
+      left: -100%;
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px);
+      color: white;
+    }
+
+    .social-icon:hover::after {
+      left: 0;
+    }
+
+    .hero-img-wrapper {
+      position: relative;
+      display: inline-block;
+      border-radius: 30px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: var(--transition);
+    }
+
+    .hero-img-wrapper:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-img {
+      width: 350px;
+      height: 350px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 5px solid rgba(255, 255, 255, 0.15);
+      transition: var(--transition);
+    }
+
+    .hero-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-img-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--accent-color);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Section Common Styles */
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 60px;
+      color: var(--secondary-color);
+      position: relative;
+      display: inline-block;
+      text-transform: capitalize;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 4px;
+      background: var(--gradient-secondary);
+      bottom: -10px;
+      left: 20%;
+      border-radius: 2px;
+    }
+
+    .section-title-center::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+
+    /* About Section */
+    #about {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    .about-text b {
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
+
+    .about-list {
+      columns: 2;
+      list-style-type: none;
+      padding-left: 0;
+      margin: 20px 0;
+    }
+
+    .about-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .about-list li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: var(--primary-color);
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+
+    /* Experience Section */
+    #experience {
+      background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primary-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 30px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      border: 4px solid white;
+    }
+
+    .timeline-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-right: 15px;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-right: 15px;
+    }
+
+    .timeline-date {
+      color: var(--primary-color);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .timeline-location {
+      color: #666;
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+
+    .timeline-description {
+      color: #555;
+      margin-top: 15px;
+    }
+
+    .timeline-description li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline-description li::before {
+      content: '\f054';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: var(--primary-color);
+      position: absolute;
+      left: 0;
+      font-size: 0.8rem;
+      top: 4px;
+    }
+
+    .tech-badge {
+      background-color: var(--light-color);
+      color: var(--secondary-color);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      transition: var(--transition);
+    }
+
+    .tech-badge:hover {
+      background: var(--gradient-secondary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Skills Section */
+    #skills {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+
+    .skill-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      height: 100%;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      border-bottom-color: var(--accent-color);
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient-secondary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .skill-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .skill-icon {
+      font-size: 3.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    .skill-card:hover .skill-icon {
+      transform: scale(1.1);
+      color: var(--accent-color);
+    }
+
+    .skill-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+
+    .skill-text {
+      color: #666;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* Gradient Background */
+    #hero {
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    }
+
+    #about {
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+    }
+
+    #experience {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    #skills {
+      background: linear-gradient(to right, #e0f7fa, #b2ebf2, #80deea);
+    }
+
+    #projects {
+      background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    }
+
+    #education {
+      background: linear-gradient(to right, #f3e7e9, #afc8ee);
+    }
+
+    #certifications {
+      background: linear-gradient(to right, #ECE9E6, #FFFFFF);
+    }
+
+    #contact {
+      background: linear-gradient(to right, #0f2027, #203a43);
+    }
+
+    /* Projects Section */
+
+    .project-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      margin-bottom: 30px;
+      background: white;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+      transition: var(--transition);
+    }
+
+    .project-card:hover .project-img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+
+    .project-description {
+      color: #666;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .project-link {
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    /* Education Section */
+    #education {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+
+    .education-item {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .education-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .education-icon {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-right: 15px;
+    }
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 5px;
+    }
+
+    .education-title {
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-right: 15px;
+    }
+
+    .education-date {
+      color: var(--primary-color);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .education-location {
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .education-degree {
+      color: #555;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .education-degree i {
+      color: var(--primary-color);
+      margin-right: 8px;
+    }
+
+    .education-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .education-score {
+      background-color: #f0f8ff;
+      padding: 5px 15px;
+      border-radius: 20px;
+      color: var(--secondary-color);
+      font-weight: 500;
+    }
+
+    .education-score i {
+      color: #ffc107;
+      margin-right: 5px;
+    }
+
+    .education-btn {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      padding: 5px 15px;
+      transition: var(--transition);
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .education-btn:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* Certifications Section */
+    #certifications {
+      background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+    }
+
+    .certification-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .certification-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .certification-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-secondary);
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+      opacity: 0.1;
+      transition: var(--transition);
+    }
+
+    .certification-card:hover::after {
+      opacity: 0.3;
+    }
+
+    .certification-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .certification-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+
+    .certification-detail {
+      display: flex;
+      margin-bottom: 8px;
+    }
+
+    .certification-label {
+      font-weight: 500;
+      flex: 0 0 45%;
+      color: var(--secondary-color);
+    }
+
+    .certification-value {
+      color: #666;
+    }
+
+    .certification-btn {
+      margin-top: 20px;
+      align-self: flex-start;
+    }
+
+    .view-cert-btn {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      padding: 8px 20px;
+      transition: var(--transition);
+      border-radius: 50px;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .view-cert-btn:hover {
+      color: white !important;
+    }
+
+    .view-cert-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-secondary);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+
+    .view-cert-btn:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: var(--gradient-primary);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: var(--gradient-secondary);
+      clip-path: circle(50px at 80% 20%);
+      opacity: 0.1;
+    }
+
+    .form-control {
+      height: 50px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    textarea.form-control {
+      height: 150px;
+      resize: none;
+    }
+
+    .contact-info {
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      color: var(--accent-color);
+      transition: var(--transition);
+    }
+
+    .contact-item:hover .contact-icon {
+      background: var(--accent-color);
+      color: white;
+      transform: rotate(15deg);
+    }
+
+    .contact-label {
+      color: white;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .contact-value {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+      transition: var(--transition);
+    }
+
+    .contact-value a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+    }
+
+    .contact-value a:hover {
+      color: var(--accent-color);
+    }
+
+    .social-links {
+      display: flex;
+      margin-top: 30px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-right: 15px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-secondary);
+      top: 0;
+      left: -100%;
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .social-link:hover {
+      transform: translateY(-5px);
+      color: white;
+    }
+
+    .social-link:hover::before {
+      left: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gradient-secondary);
+    }
+
+    .footer-text {
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-social-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin: 0 10px;
+      transition: var(--transition);
+    }
+
+    .footer-social-icon:hover {
+      background: var(--accent-color);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--gradient-secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #3498db, #e74c3c);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    body {
+      height: 2000px;
+      /* For demonstration */
+    }
+
+    /* Animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1199.98px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .section {
+        padding: 80px 0;
+      }
+
+      .hero-img {
+        width: 300px;
+        height: 300px;
+      }
+
+      .about-list {
+        columns: 1;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+
+      .hero-img-wrapper {
+        margin-top: 40px;
+      }
+
+      .hero-cta {
+        justify-content: center;
+      }
+
+      .contact-form {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .btn-primary,
+      .btn-outline-light {
+        width: 100%;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        margin-right: 10px;
+      }
+
+      .hero-img-badge {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        bottom: -15px;
+        right: -15px;
+      }
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Vicky Kumar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#hero">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#certifications">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="d-flex align-items-center">
+    <!-- Animated Background Elements -->
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 hero-content animate-on-scroll">
+          <div class="hero-text-wrapper">
+            <h1 class="hero-title animate__animated animate__fadeInLeft">
+              Hi, I'm <span>Vicky Kumar</span>
+            </h1>
+
+            <h2 class="hero-subtitle animate__animated animate__fadeInRight">
+              <span class="typewriter"></span>
+            </h2>
+
+            <p class="hero-text">
+              I craft exceptional digital experiences using cutting-edge web technologies and AI solutions.
+            </p>
+
+            <div class="hero-cta">
+              <a href="#contact" class="btn btn-primary btn-lg">
+                Get In Touch
+              </a>
+
+              <a href="#projects" class="btn btn-outline-light btn-lg">
+                View My Work
+              </a>
+            </div>
+
+            <div class="social-icons">
+              <a href="https://github.com/vickykumar11062" class="social-icon">
+                <i class="fab fa-github"></i>
+              </a>
+
+
+              <a href="https://drive.google.com/file/d/1xaeQLuP9gRuQ_z2PiW8mY1cD-Jce9S4z/view?usp=drive_link"
+                class="social-icon" target="_blank">
+                <i class="fas fa-file-alt"></i>
+              </a>
+
+              <a href="https://www.linkedin.com/in/vicky-kumar-3a4566284/" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+
+              <a href="https://x.com/VICKYKU76483639" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+
+              <a href="https://www.instagram.com/thvickykumar/" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 text-center animate-on-scroll">
+          <div class="hero-img-wrapper">
+            <img src="image.jpg" alt="Vicky Kumar - Full Stack Developer" class="hero-img">
+            <div class="hero-img-badge">
+              <i class="fas fa-code me-2"></i> Developer
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typewriter Effect Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const phrases = [
+        "Full Stack Web Developer",
+        "Machine Learning Engineer",
+        "MERN Stack Specialist",
+        "AI Enthusiast"
+      ];
+      let currentPhrase = 0;
+      let currentChar = 0;
+      let isDeleting = false;
+      const typewriter = document.querySelector('.typewriter');
+
+      function type() {
+        const currentText = phrases[currentPhrase];
+
+        if (isDeleting) {
+          typewriter.textContent = currentText.substring(0, currentChar - 1);
+          currentChar--;
+        } else {
+          typewriter.textContent = currentText.substring(0, currentChar + 1);
+          currentChar++;
+        }
+
+        if (!isDeleting && currentChar === currentText.length) {
+          isDeleting = true;
+          setTimeout(type, 1500);
+        } else if (isDeleting && currentChar === 0) {
+          isDeleting = false;
+          currentPhrase = (currentPhrase + 1) % phrases.length;
+          setTimeout(type, 300);
+        } else {
+          const speed = isDeleting ? 50 : 100;
+          setTimeout(type, speed);
+        }
+      }
+
+      setTimeout(type, 1000);
+    });
+  </script>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title text-center animate-on-scroll">About Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 animate-on-scroll">
+          <p class="about-text">
+            I'm <b>Vicky Kumar</b>, a dedicated <b>Computer Science student</b> at Jodhpur Institute of Engineering and
+            Technology with a strong academic record (CGPA: 9.01). As an aspiring <b>Full Stack Developer , Data Analyst
+              and AI
+              enthusiast</b>, I've honed my skills in both frontend (React, Material UI) and backend technologies
+            (Node.js, FastAPI, RESTFull API), along with machine learning frameworks like TensorFlow and Scikit-learn.
+          </p>
+
+          <p class="about-text"> My professional journey includes an internship as a <b>Software Engineer Intern</b> at
+            Celebal Technologies, where I designed and optimized <b>Node.js backend workflows</b> for enterprise
+            applications, enhancing scalability and performance. I further expanded my expertise through AICTE's
+            <b>TechSaksham AI program</b> (in collaboration with Microsoft and SAP), developing a disease prediction
+            system, and as a <b>MERN Stack Trainee</b> at Zeetron Network. My project portfolio includes real-time chat
+            applications, RESTful weather APIs, and machine learning models achieving 85%+ accuracy.
+          </p>
+
+          <p class="about-text">
+            My technical arsenal includes:
+          </p>
+          <ul class="about-list">
+            <li>Java, Python, JavaScript</li>
+            <li>React & Node.js</li>
+            <li>PostgreSQL & MongoDB</li>
+            <li>TensorFlow & Scikit-learn</li>
+            <li>Docker & Git</li>
+            <li>Bootstrap & Material UI</li>
+          </ul>
+
+          <p class="about-text">
+            Recognized for my problem-solving abilities (5-star HackerRank, 100+ LeetCode solutions), I'm passionate
+            about creating innovative solutions at the intersection of web development and artificial intelligence. My
+            goal is to leverage technology to build impactful applications that solve real-world challenges.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title text-center animate-on-scroll">Professional Experience</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="timeline">
+
+            <!-- Experience 1 -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-code timeline-icon"></i>
+                <div>
+                  <div class="timeline-header">
+                    <h3 class="timeline-title">Celebal Technologies</h3>
+                    <span class="timeline-date">May 2025 – Present</span>
+                  </div>
+                  <p class="timeline-location"><i class="fas fa-map-marker-alt me-2"></i>Jaipur, Rajasthan | MERN Stack
+                    Intern</p>
+
+                  <ul class="timeline-description">
+                    <li>Built scalable <strong>REST APIs</strong> using FastAPI and PostgreSQL for learning management
+                      systems, improving data retrieval efficiency by 30%</li>
+                    <li>Gained hands-on experience with <strong>MERN stack</strong> (MongoDB, Express.js, React.js,
+                      Node.js) in Agile workflows</li>
+                    <li>Collaborated with senior developers to debug and optimize frontend components, enhancing UI
+                      responsiveness</li>
+                  </ul>
+
+                  <div class="mt-3">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express.js</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Github</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-code timeline-icon"></i>
+                <div>
+                  <div class="timeline-header">
+                    <h3 class="timeline-title">Cognifyz Technologies</h3>
+                    <span class="timeline-date">Apr 2025 – May 2025</span>
+                  </div>
+                  <p class="timeline-location"><i class="fas fa-map-marker-alt me-2"></i>Nagpur, Maharashtra | Web
+                    Development Intern</p>
+
+                  <ul class="timeline-description">
+                    <li>Developing and integrating scalable web solutions using <strong>front-end technology</strong> to
+                      enhance user experiences</li>
+                    <li>Collaborating with the team to build stable and efficient applications that meet customer
+                      requirements</li>
+                    <li>Contributing to projects that leverage data intelligence, aligning with company's vision of
+                      "Where Data Meets Intelligence"</li>
+                  </ul>
+
+                  <div class="mt-3">
+                    <span class="tech-badge">Front-end Development</span>
+                    <span class="tech-badge">Scalable Solutions</span>
+                    <span class="tech-badge">User Experience</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-laptop-code timeline-icon"></i>
+                <div>
+                  <div class="timeline-header">
+                    <h3 class="timeline-title">AICTE Internship - AI: Transformative Learning with TechSaksham</h3>
+                    <span class="timeline-date">Jan 2025 – Feb 2025</span>
+                  </div>
+                  <p class="timeline-location"><i class="fas fa-map-marker-alt me-2"></i>Remote | AI Trainee (Microsoft
+                    and SAP)</p>
+
+                  <ul class="timeline-description">
+                    <li>Completed intensive <strong>AI training program</strong> with industry experts from Microsoft
+                      and SAP, covering cutting-edge AI/ML applications</li>
+                    <li>Developed and presented a <strong>disease prediction system</strong> using machine learning
+                      (Scikit-learn) with <strong>85%+ accuracy</strong></li>
+                    <li>Participated in technical sessions on AI ethics, model deployment, and real-world
+                      problem-solving</li>
+                  </ul>
+
+                  <div class="mt-3">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Machine Learning</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                    <span class="tech-badge">AI Ethics</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-code timeline-icon"></i>
+                <div>
+                  <div class="timeline-header">
+                    <h3 class="timeline-title">Zeetron Network Private Limited</h3>
+                    <span class="timeline-date">Jun 2024 – Jul 2024</span>
+                  </div>
+                  <p class="timeline-location"><i class="fas fa-map-marker-alt me-2"></i>Jaipur, Rajasthan | MERN Stack
+                    Trainee</p>
+
+                  <ul class="timeline-description">
+                    <li>Built scalable <strong>REST APIs</strong> using FastAPI and PostgreSQL for learning management
+                      systems, improving data retrieval efficiency by 30%</li>
+                    <li>Gained hands-on experience with <strong>MERN stack</strong> (MongoDB, Express.js, React.js,
+                      Node.js) in Agile workflows</li>
+                    <li>Collaborated with senior developers to debug and optimize frontend components, enhancing UI
+                      responsiveness</li>
+                  </ul>
+
+                  <div class="mt-3">
+                    <span class="tech-badge">MERN Stack</span>
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Agile</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 4 -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-laptop timeline-icon"></i>
+                <div>
+                  <div class="timeline-header">
+                    <h3 class="timeline-title">WsCube Tech</h3>
+                    <span class="timeline-date">May 2023 – Jul 2024</span>
+                  </div>
+                  <p class="timeline-location"><i class="fas fa-map-marker-alt me-2"></i>Jodhpur, Rajasthan | Full Stack
+                    Development Trainee</p>
+
+                  <ul class="timeline-description">
+                    <li>Developed a <strong>weather application</strong> using React and Material UI, integrating REST
+                      APIs for real-time forecasts</li>
+                    <li>Engineered a <strong>GitHub analytics dashboard</strong> with data visualization features to
+                      track repository statistics</li>
+                    <li>Implemented <strong>user authentication</strong> and MongoDB for a real-time chat app using
+                      Socket.io</li>
+                  </ul>
+
+                  <div class="mt-3">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Socket.io</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title text-center animate-on-scroll">My Skills</h2>
+      <div class="row g-4">
+        <!-- Skill 1 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fab fa-html5"></i>
+            </div>
+            <h3 class="skill-title">HTML & CSS</h3>
+            <p class="skill-text">
+              Expert in semantic HTML5 and modern CSS3, including Flexbox, Grid, and animations.
+              Experienced with CSS frameworks like Bootstrap for responsive design. Proficient in building accessible,
+              mobile-friendly interfaces with a focus on performance and clean UI.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fab fa-bootstrap"></i>
+            </div>
+            <h3 class="skill-title">Bootstrap</h3>
+            <p class="skill-text">
+              Developed modern, mobile-first web interfaces using Bootstrap's responsive grid system and prebuilt UI
+              components. Created consistent and accessible layouts quickly with minimal custom CSS, leveraging built-in
+              JavaScript plugins for interactive elements.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS"
+                width="45" height="45">
+            </div>
+            <h3 class="skill-title">Tailwind CSS</h3>
+            <p class="skill-text">
+              Crafted fully customized, responsive user interfaces using Tailwind CSS's utility-first approach. Enhanced
+              development speed with reusable utility classes, implemented dark mode, and optimized production builds by
+              purging unused styles for high performance and scalability.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fab fa-js"></i>
+            </div>
+            <h3 class="skill-title">JavaScript</h3>
+            <p class="skill-text">
+              Strong knowledge of vanilla JavaScript, ES6+ features, and modern frameworks like React and Vue.js.
+              Experienced in using TypeScript, frontend build tools (Webpack, Vite), and implementing component-based
+              architecture, state management, and API integration for scalable and maintainable user interfaces.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fab fa-java"></i>
+            </div>
+            <h3 class="skill-title">Java</h3>
+            <p class="skill-text">
+              Proficient in Core Java with strong understanding of object-oriented programming principles.
+              Experienced in developing console-based applications using collections, multithreading, exception
+              handling, and file I/O, with solid knowledge of Java fundamentals and data structures.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fab fa-python"></i>
+            </div>
+            <h3 class="skill-title">Python</h3>
+            <p class="skill-text">
+              Proficient in Python programming with experience in data analysis and backend development.
+              Built automation scripts, RESTful APIs, and machine learning models using Python libraries such as Flask,
+              Pandas, and scikit-learn. Applied Python in diverse domains including web development, data processing,
+              and AI-based solutions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 7 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="skill-title">MERN Stack</h3>
+            <p class="skill-text">
+              Full stack development with MongoDB, Express.js, React, and Node.js.
+              Built scalable web applications with user authentication, real-time features (using Socket.io), and
+              RESTful APIs. Integrated CRUD operations, JWT-based security, and MongoDB Atlas for cloud data storage.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 8 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-chart-bar"></i> <!-- Changed icon to data visualization -->
+            </div>
+            <h3 class="skill-title">Data Analysis</h3>
+            <p class="skill-text">
+              Data wrangling and visualization using Python (Pandas, NumPy), SQL, and Power BI/Tableau.
+              Cleaned and transformed raw datasets, built interactive dashboards, and generated actionable insights.
+              Performed statistical analysis, A/B testing, and created predictive models to drive data-driven decision
+              making.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 9 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-file-excel"></i> <!-- Excel icon (can also use fa-file-powerpoint/fa-file-word) -->
+            </div>
+            <h3 class="skill-title">Microsoft Office</h3>
+            <p class="skill-text">
+              Advanced proficiency in <b>Excel</b> (VLOOKUP, pivot tables, macros), <b>PowerPoint</b> (executive
+              presentations),
+              and <b>Word</b> (technical documentation). Created dynamic financial models, automated reports using Excel
+              VBA,
+              and designed data-driven dashboards. Streamlined workflows by 40% through Office automation tools.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 10 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="skill-title">SQL & PostgreSql</h3>
+            <p class="skill-text">
+              Experience with relational databases including MySQL and PostgreSQL.
+              Skilled in database design, query optimization, and writing complex SQL queries involving joins,
+              subqueries, and indexing. Familiar with stored procedures, data normalization, and handling transactions
+              for robust data management.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 11 -->
+        <div class="col-md-4 animate-on-scroll">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="skill-title">Machine Learning</h3>
+            <p class="skill-text">
+              Knowledge of Python ML libraries (Scikit-learn, TensorFlow).
+              Experience with data preprocessing, model training, and deployment of machine learning models. Proficient
+              in feature engineering, model evaluation, and using tools like NumPy, Pandas, and Matplotlib for analysis
+              and visualization. Familiar with deploying models using Streamlit for real-time predictions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title text-center animate-on-scroll">My Projects</h2>
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="project-card">
+            <img src="book.jpeg" alt="Book Store Application" class="project-img">
+            <div class="project-content">
+              <h3 class="project-title">Book Store Application</h3>
+              <p class="project-description">
+                A web app for browsing and purchasing books with features like user login, search, cart, orders, and
+                admin inventory management.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Stripe API</span>
+              </div>
+              <a href="#" class="btn btn-outline-primary project-link">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="project-card">
+            <img src="ecomm.jpg" alt="E-Commerce Platform" class="project-img">
+            <div class="project-content">
+              <h3 class="project-title">E-Commerce Platform</h3>
+              <p class="project-description">
+                A full-featured e-commerce platform with product listings, cart functionality,
+                and secure payment processing.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Stripe API</span>
+              </div>
+              <a href="#" class="btn btn-outline-primary project-link">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="project-card">
+            <img src="Disease.jpg" alt="Disease Prediction Outbreaks" class="project-img">
+            <div class="project-content">
+              <h3 class="project-title">Disease Prediction Outbreaks</h3>
+              <p class="project-description">
+                A predictive application that uses machine learning to analyze health data and forecast potential
+                disease outbreaks, enabling early detection and proactive healthcare measures.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">ML</span>
+                <span class="tech-badge">Pandas</span>
+                <span class="tech-badge">scikit-learn</span>
+              </div>
+              <a href="https://github.com/vickykumar11062/Diabetes_heart_parkinson_outbreaks.git"
+                class="btn btn-outline-primary project-link">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="project-card">
+            <img src="Hotel.jpg" alt="Hotel Management System" class="project-img">
+            <div class="project-content">
+              <h3 class="project-title">Hotel Management System</h3>
+              <p class="project-description">
+                A web app for managing room bookings, check-in/out, staff, and billing, offering real-time availability
+                and streamlined operations.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Stripe API</span>
+              </div>
+              <a href="https://vkg-hotel.vercel.app" class="btn btn-outline-primary project-link">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="project-card">
+            <img src="weather.jpg" alt="Weather Application" class="project-img">
+            <div class="project-content">
+              <h3 class="project-title">Weather Application</h3>
+              <p class="project-description">
+                A responsive app that shows real-time weather using APIs, displaying temperature, humidity, wind, and
+                forecast with dynamic visuals.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Material UI</span>
+                <span class="tech-badge">Stripe API</span>
+              </div>
+              <a href="https://github.com/vickykumar11062/vickykumar11062-Cloud-Point-API-s-weather-Application.git"
+                class="btn btn-outline-primary project-link">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="project-card">
+            <img src="chat.jpg" alt="Chat App" class="project-img">
+            <div class="project-content">
+              <h3 class="project-title">Chat App</h3>
+              <p class="project-description">
+                A real-time messaging app with user login, private/group chats, online status, and instant updates using
+                WebSockets or Socket.io.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.Js</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Material UI</span>
+              </div>
+              <a href="#" class="btn btn-outline-primary project-link">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title text-center animate-on-scroll">Education</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <!-- Education Item 1 -->
+          <div class="education-item animate-on-scroll">
+            <div class="d-flex align-items-start">
+              <i class="fas fa-university education-icon"></i>
+              <div>
+                <div class="education-header">
+                  <h3 class="education-title">Jodhpur Institute of Engineering and Technology</h3>
+                  <span class="education-date">Aug 2022 – May 2026</span>
+                </div>
+                <p class="education-location">Jodhpur, Rajasthan</p>
+                <p class="education-degree">
+                  <i class="fas fa-graduation-cap"></i>
+                  Bachelor of Technology in Computer Science
+                </p>
+                <div class="education-footer">
+                  <span class="education-score">
+                    <i class="fas fa-star"></i>CGPA: 9.01/10
+                  </span>
+                  <button class="btn btn-sm education-btn" onclick="viewMarksheet('btech')">
+                    View Marksheet <i class="fas fa-external-link-alt ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Item 2 -->
+          <div class="education-item animate-on-scroll">
+            <div class="d-flex align-items-start">
+              <i class="fas fa-school education-icon"></i>
+              <div>
+                <div class="education-header">
+                  <h3 class="education-title">Munshi Singh College Motihari</h3>
+                  <span class="education-date">Aug 2019 – May 2021</span>
+                </div>
+                <p class="education-location">Motihari, Bihar</p>
+                <p class="education-degree">
+                  <i class="fas fa-flask"></i>
+                  12th in Science (BSEB)
+                </p>
+                <div class="education-footer">
+                  <span class="education-score">
+                    <i class="fas fa-percentage"></i>Marks: 83.2%
+                  </span>
+                  <button class="btn btn-sm education-btn" onclick="viewMarksheet('12th')">
+                    View Marksheet <i class="fas fa-external-link-alt ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Item 3 -->
+          <div class="education-item animate-on-scroll">
+            <div class="d-flex align-items-start">
+              <i class="fas fa-school education-icon"></i>
+              <div>
+                <div class="education-header">
+                  <h3 class="education-title">Mahadev Shah High School Chiraiya</h3>
+                  <span class="education-date">Completed Aug 2019</span>
+                </div>
+                <p class="education-location">Motihari, Bihar</p>
+                <p class="education-degree">
+                  <i class="fas fa-book"></i>
+                  10th (BSEB)
+                </p>
+                <div class="education-footer">
+                  <span class="education-score">
+                    <i class="fas fa-percentage"></i>Marks: 87%
+                  </span>
+                  <button class="btn btn-sm education-btn" onclick="viewMarksheet('10th')">
+                    View Marksheet <i class="fas fa-external-link-alt ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <h2 class="section-title text-center animate-on-scroll">Certifications</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="row g-4">
+            <!-- Certification 1 -->
+            <div class="col-md-6 animate-on-scroll">
+              <div class="certification-card">
+                <div class="certification-icon" style="text-align: center;">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="certification-title">MERN Stack Development</h3>
+                <div class="certification-detail">
+                  <span class="certification-label">Issuing Organization:</span>
+                  <span class="certification-value">Zeetron Network</span>
+                </div>
+                <div class="certification-detail">
+                  <span class="certification-label">Duration:</span>
+                  <span class="certification-value">May 2024 – July 2024</span>
+                </div>
+                <button class="btn btn-outline-primary view-cert-btn certification-btn"
+                  onclick="viewCertificate('mern')">
+                  View Certificate <i class="fas fa-external-link-alt ms-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Certification 2 -->
+            <div class="col-md-6 animate-on-scroll">
+              <div class="certification-card">
+                <div class="certification-icon" style="text-align: center;">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="certification-title">Software Testing Techniques</h3>
+                <div class="certification-detail">
+                  <span class="certification-label">Issuing Organization:</span>
+                  <span class="certification-value">Infosys Springboard</span>
+                </div>
+                <div class="certification-detail">
+                  <span class="certification-label">Completed:</span>
+                  <span class="certification-value">2024</span>
+                </div>
+                <button class="btn btn-outline-primary view-cert-btn certification-btn"
+                  onclick="viewCertificate('testing')">
+                  View Certificate <i class="fas fa-external-link-alt ms-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Certification 3 -->
+            <div class="col-md-6 animate-on-scroll">
+              <div class="certification-card">
+                <div class="certification-icon" style="text-align: center;">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="certification-title">Full Stack Development</h3>
+                <div class="certification-detail">
+                  <span class="certification-label">Issuing Organization:</span>
+                  <span class="certification-value">JIET Universe</span>
+                </div>
+                <div class="certification-detail">
+                  <span class="certification-label">Duration:</span>
+                  <span class="certification-value">Oct 2022 – Apr 2025</span>
+                </div>
+                <button class="btn btn-outline-primary view-cert-btn certification-btn"
+                  onclick="viewCertificate('fullstack')">
+                  View Certificate <i class="fas fa-external-link-alt ms-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Certification 4 -->
+            <div class="col-md-6 animate-on-scroll">
+              <div class="certification-card">
+                <div class="certification-icon" style="text-align: center;">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="certification-title">Ethics in Engineering Practice</h3>
+                <div class="certification-detail">
+                  <span class="certification-label">Issuing Organization:</span>
+                  <span class="certification-value">NPTEL</span>
+                </div>
+                <div class="certification-detail">
+                  <span class="certification-label">Duration:</span>
+                  <span class="certification-value">Aug 2024 – Oct 2024</span>
+                </div>
+                <button class="btn btn-outline-primary view-cert-btn certification-btn"
+                  onclick="viewCertificate('ethics')">
+                  View Certificate <i class="fas fa-external-link-alt ms-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Certification 5 -->
+            <div class="col-md-6 animate-on-scroll">
+              <div class="certification-card">
+                <div class="certification-icon" style="text-align: center;">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="certification-title">Microfoundations of Macroeconomics</h3>
+                <div class="certification-detail">
+                  <span class="certification-label">Issuing Organization:</span>
+                  <span class="certification-value">NPTEL</span>
+                </div>
+                <div class="certification-detail">
+                  <span class="certification-label">Duration:</span>
+                  <span class="certification-value">Jan 2025 – Mar 2025</span>
+                </div>
+                <button class="btn btn-outline-primary view-cert-btn certification-btn"
+                  onclick="viewCertificate('economics')">
+                  View Certificate <i class="fas fa-external-link-alt ms-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Certification 5 -->
+            <div class="col-md-6 animate-on-scroll">
+              <div class="certification-card">
+                <div class="certification-icon" style="text-align: center;">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="certification-title">Java Programming</h3>
+                <div class="certification-detail">
+                  <span class="certification-label">Issuing Organization:</span>
+                  <span class="certification-value">Great Learning</span>
+                </div>
+                <div class="certification-detail">
+                  <span class="certification-label">Completed :</span>
+                  <span class="certification-value">May 2025</span>
+                </div>
+                <button class="btn btn-outline-primary view-cert-btn certification-btn"
+                  onclick="viewCertificate('java')">
+                  View Certificate <i class="fas fa-external-link-alt ms-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Certification 7 -->
+            <div class="col-md-6 animate-on-scroll">
+              <div class="certification-card">
+                <div class="certification-icon" style="text-align: center;">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="certification-title">SQL Mastry from Basic to Advanced</h3>
+                <div class="certification-detail">
+                  <span class="certification-label">Issuing Organization:</span>
+                  <span class="certification-value">SeekheIndia</span>
+                </div>
+                <div class="certification-detail">
+                  <span class="certification-label">Completed:</span>
+                  <span class="certification-value"> April 2025 - May 2025</span>
+                </div>
+                <button class="btn btn-outline-primary view-cert-btn certification-btn"
+                  onclick="viewCertificate('sql')">
+                  View Certificate <i class="fas fa-external-link-alt ms-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Certification 8-->
+            <div class="col-md-6 animate-on-scroll">
+              <div class="certification-card">
+                <div class="certification-icon" style="text-align: center;">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="certification-title">Introduction to Machine Learning</h3>
+                <div class="certification-detail">
+                  <span class="certification-label">Issuing Organization:</span>
+                  <span class="certification-value">Great Learning</span>
+                </div>
+                <div class="certification-detail">
+                  <span class="certification-label">Completed:</span>
+                  <span class="certification-value">April 2025</span>
+                </div>
+                <button class="btn btn-outline-primary view-cert-btn certification-btn" onclick="viewCertificate('ml')">
+                  View Certificate <i class="fas fa-external-link-alt ms-2"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title text-center text-white animate-on-scroll">Get In Touch</h2>
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-10">
+          <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-6 animate-on-scroll">
+
+
+              <div class="contact-form">
+                <h4 class="mb-4" style="color: #2c3e50; font-weight: 600;">Send me a message</h4>
+                <form id="contactForm">
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+                  </div>
+                  <div class="mb-3">
+                    <input type="email" class="form-control form-control-lg" placeholder="Your Email" required>
+                  </div>
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Subject">
+                  </div>
+                  <div class="mb-3">
+                    <textarea class="form-control form-control-lg" rows="4" placeholder="Your Message"
+                      required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg w-100">
+                    Send Message <i class="fas fa-paper-plane ms-2"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-6 animate-on-scroll">
+              <div class="contact-info">
+                <h4 class="text-white mb-4">Contact Information</h4>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h5 class="contact-label">Location</h5>
+                    <p class="contact-value">Motihari, Bihar, India</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h5 class="contact-label">Email</h5>
+                    <p class="contact-value">
+                      <a href="mailto:vickykumar11062003@gmail.com">vickykumar11062003@gmail.com</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div>
+                    <h5 class="contact-label">Phone</h5>
+                    <p class="contact-value">
+                      <a href="tel:+919128634469">+91 9128634469</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="social-links">
+                  <a href="https://github.com/vickykumar11062" class="social-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/vicky-kumar-3a4566284/" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://x.com/VICKYKU76483639" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://www.instagram.com/thvickykumar/" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">Let's build something amazing together!</p>
+      <div class="footer-social">
+        <a href="https://github.com/vickykumar11062" class="footer-social-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://drive.google.com/file/d/1xaeQLuP9gRuQ_z2PiW8mY1cD-Jce9S4z/view?usp=drive_link"
+          class="footer-social-icon" target="_blank">
+          <i class="fas fa-file-alt"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/vicky-kumar-3a4566284/" class="footer-social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://x.com/VICKYKU76483639" class="footer-social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/thvickykumar/" class="footer-social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <p class="copyright">© 2024 Vicky Kumar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.querySelector('.back-to-top');
+
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+          backToTop.classList.add('active');
+        } else {
+          backToTop.classList.remove('active');
+        }
+      });
+
+      // Smooth scroll to top
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+
+        if (elementPosition < screenPosition) {
+          element.classList.add('animated');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Here you would typically send the form data to a server
+        alert('Thank you for your message! I will get back to you soon.');
+        this.reset();
+      });
+    }
+
+    // View marksheet function
+    function viewMarksheet(type) {
+      const marksheetLinks = {
+        'btech': 'https://drive.google.com/file/d/10dmU9YtVjDxFfpeR7odtA8id96hwldzc/view?usp=drive_link',
+        '12th': 'https://drive.google.com/file/d/1s6Qar5PZEtWGo4z6alkPclZStzXIEike/view?usp=drive_link',
+        '10th': 'https://drive.google.com/file/d/1WXBIFB-UJszsKYwxc0GUo9eEPbGD22Rj/view?usp=drive_link'
+      };
+
+      if (marksheetLinks[type]) {
+        window.open(marksheetLinks[type], '_blank');
+      } else {
+        alert('Marksheet will be available soon!');
+      }
+    }
+
+    // View certificate function
+    function viewCertificate(type) {
+      const certificateLinks = {
+        'mern': 'https://drive.google.com/file/d/1acRqxhjywlV44UPaWiZFhsc6PVbzCSWS/view?usp=drive_link',
+        'testing': 'https://drive.google.com/file/d/1OwsLprhhRXw4hjbT6-M76gliYL-1pvUj/view?usp=drive_link',
+        'fullstack': 'https://drive.google.com/file/d/10rShCn5PgYN0utrSJ2ZKXsBc0ZgdSqop/view?usp=drive_link',
+        'ethics': 'https://drive.google.com/file/d/1bCHksG2-l2__SnkMqkUYywLApi-gYyyg/view?usp=drive_link',
+        'economics': 'https://drive.google.com/file/d/1pM_PabMVA6qFV9ETPpJ8X_59629poAFx/view?usp=drive_link',
+        'ml': 'https://drive.google.com/file/d/1fSgyaKfQ88Q5D0PPoGS0fjd28hSl4O4Q/view?usp=drive_link',
+        'sql': 'https://drive.google.com/file/d/1HO-k0llzTyuHzt0G_wyRj8O8Gs21V9AK/view?usp=drive_link',
+        'java': 'https://drive.google.com/file/d/1PuZp2L3TAtBbHUEsryqozDvGeyx2e3p7/view?usp=drive_link'
+      };
+
+      if (certificateLinks[type]) {
+        window.open(certificateLinks[type], '_blank');
+      } else {
+        alert('Certificate will be available soon!');
+      }
+    }
+  </script>
+</body>
+
+</html>
