@@ -26,7 +26,7 @@ The site serves as a digital resume and project hub for recruiters, collaborator
 | Section | Description |
 |---------|-------------|
 | **Hero** | Introduction, role (Developer), and call-to-action |
-| **About Me** | Background, academic stats (CGPA: 9.01), technical arsenal, and career goals |
+| **About Me** | Background, academic stats (CGPA: 9.10), technical arsenal, and career goals |
 | **Professional Experience** | Internships at Celebal Technologies, Cognifyz, AICTE TechSaksham (Microsoft & SAP), Zeetron Network, WsCube Tech |
 | **Skills** | Visual badges for 12+ technologies including MERN, Python, ML, GenAI, SQL, Docker, etc. |
 | **Projects** | 9 featured projects (Telemedicine, E-learning Platform, Disease Prediction, Weather App, Chat App, etc.) with tech stacks and "View Project" links |
