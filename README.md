@@ -9,13 +9,13 @@ Visit my portfolio: **[https://my-portfolio-kappa-wine-31.vercel.app/](https://m
 
 ## 📌 About The Project
 
-This is my personal developer portfolio website built to showcase my journey as a **Full Stack Developer**, **Data Analyst**, and **AI Enthusiast**. It highlights my professional experience, technical skills, projects, certifications, and education in a clean, responsive, and interactive interface.
+This is my personal developer portfolio website built to showcase my journey as a **Full Stack Developer**, and **AI Enthusiast**. It highlights my professional experience, technical skills, projects, certifications, and education in a clean, responsive, and interactive interface.
 
 The site serves as a digital resume and project hub for recruiters, collaborators, and tech enthusiasts to explore my work in web development, machine learning, and AI-powered applications.
 
 ## 🛠️ Built With
 
-- **Frontend:** React.js, Material UI, Tailwind CSS, Bootstrap
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap
 - **Animations & UI:** Custom CSS, Flexbox/Grid, Responsive Design
 - **Deployment:** Vercel
 
